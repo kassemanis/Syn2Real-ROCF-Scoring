@@ -13,9 +13,10 @@ Our framework consists of two main stages:
 
 ### Synthetic Data Generation
 
-We generate synthetic ROCF drawings in a multi-step process designed to mimic real-world variations:
-* **Unit Decomposition:** The ground-truth ROCF figure is broken down into its 18 standard scoring units.
-* **Prototype Generation:** Based on scoring criteria, Units are probabilistically selected and geometrically distorted to create a prototype drawing.
+We generate synthetic ROCF drawings in a multi-step process designed to mimic real-world variations. The main parts of this process are:
+
+* **Unit Decomposition & Prototype Generation:** The ground-truth ROCF figure is broken down into its 18 standard scoring units, and based on scoring criteria, these units are probabilistically selected and geometrically distorted to create a prototype drawing (see `Syn2Real-ROCF-Scoring/rocf_synthesis/prototype_generation.py`).
+  
 * **Geometry and Style Transfer:** The style (e.g., stroke texture, line quality) from a real patient drawing is transferred to the prototype, creating a realistic final image with an associated score ([refer to the official implementation](https://github.com/sunniesuhyoung/DST)).
 
 ### ROCF-Net Scoring Model
